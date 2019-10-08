@@ -19,8 +19,8 @@ cd
 # local.php -> @define('CONST_Database_DSN', 'pgsql://nominatim:password1234@192.168.1.128:6432/nominatim'); // <driver>://<username>:<password>@<host>:<port>/<database>
 # sudo docker run --restart=always -p 7070:8080 -d -v /home/passdriver/nominatimdata/conf:/data nominatim sh /app/startapache.sh
 # local.php -> @define('CONST_Replication_Url', 'http://download.geofabrik.de/south-america/brazil-updates/');
-sudo docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-extract -p /opt/car.lua nominatimdata/brazil-latest.osm.pbf 
-sudo docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-partition nominatimdata/brazil-latest.osrm
-sudo docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-customize nominatimdata/brazil-latest.osrm
+sudo docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-extract -p /opt/car.lua /nominatimdata/brazil-latest.osm.pbf 
+sudo docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-partition /nominatimdata/brazil-latest.osrm
+sudo docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-customize /nominatimdata/brazil-latest.osrm
 # sudo docker run -t -i -p 5000:5000 -v "${PWD}:/data" osrm/osrm-backend osrm-routed --algorithm mld /data/brazil-latest.osrm
 # sudo docker run -p 9966:9966 osrm/osrm-frontend
