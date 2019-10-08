@@ -1,10 +1,13 @@
 #bin/sh
 sudo apt-get update && sudo apt-get upgrade
+curl https://raw.githubusercontent.com/ajenti/ajenti/master/scripts/install.sh | sudo bash -s -
+sudo pip install ajenti-panel ajenti.plugin.dashboard ajenti.plugin.settings ajenti.plugin.plugins ajenti.plugin.filemanager ajenti.plugin.notepad ajenti.plugin.packages ajenti.plugin.services ajenti.plugin.terminal
 sudo apt-get install snapd
 sudo snap install docker
 sudo docker pull osrm/osrm-backend
 sudo docker pull osrm/osrm-frontend
 sudo docker pull mediagis/nominatim
+sudo docker pull hasura/graphql-engine
 mkdir nominatimdata
 cd nominatimdata
 wget http://download.geofabrik.de/south-america/brazil-latest.osm.pbf
